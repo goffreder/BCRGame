@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="js/lib/jquery-1.11.0.js" type="text/javascript"></script>
+    <script src="js/lib/kinetic-v5.1.0.js" type="text/javascript"></script>
+    <script src="js/lib/requestAnimationFrame.js" type="text/javascript"></script>
+    <script src="js/BCRGame.kinetic.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <title>Binary Chain Reaction</title>
+</head>
+
+<body>
+    <div id="game_container">
+        <div id="game_canvas"></div>
+    </div>
+    <p>
+    This is an HTML5 porting of the famous Flash game <a href="http://chainrxn.zwigglers.com/" target="_blank">Chain RXN</a>.<br>
+    It uses an HTML5 Canvas element and the well-known JavaScript framework <a href="http://kineticjs.com/" target="_blank">Kinetic.js</a>.</br>
+    </p>
+    <p>
+    In this version you don't have to explode as many shperes as possible. Instead, you have to build a chain as deep as possible.<br>
+    The levels are cleared upon reaching a determinate grade of reaction.
+    For example, the third level is cleared by reaching grade 8. It means that at least one sphere must react with a grade 4 sphere,
+    which is a sphere that has reacted with a grade 2 sphere (the starting grade).<br>
+    Currently there are 12 levels, the last one is passed by reaching grade 16777216 (or 2^24).
+    </p>
+    <p>
+    The Start buttons starts the game.
+    The UseRadius and UseTime are examples of power ups. The former doubles the explosion radius,
+    the latter doubles the time the explosion is visible.
+    </p>
+    <p>
+    Released under the MIT License. See <a href="LICENSE" target="_blank">LICENSE</a> for details.
+    </p>
+    <script>
+        var game;
+
+        (function() {
+            game = new BCRGame("game_canvas");
+            game.drawBoard().playLevel(0);
+        })();
+    </script>
+</body>
+</html>

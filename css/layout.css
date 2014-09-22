@@ -1,0 +1,23 @@
+#game_container {
+	background-color: #444444;
+	width : 678px;
+	height : 378px;
+	position : relative;
+}
+
+#game_canvas {
+	background-color : #222222;
+	width : 578px;
+	height : 378px;
+	position : absolute;
+	right : 0;
+}
+
+#game_canvas.active {
+	cursor: crosshair;
+}
+
+button {
+	position : fixed;
+	left : 15px;
+}
